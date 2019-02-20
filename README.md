@@ -31,7 +31,22 @@ For OSMC or other stripped down Raspberry OS, you may need to install git and ma
 ```sh
 sudo apt-get install git make
 ```
+## TLS protocal
 
+
+IoT is, of course, all about connecting to the Internet, as much as it is about security. Therefor, encryption becomes essential to secure communication. To do this, we firstly need to get a broker certificate which could be downloaded from (https://test.mosquitto.org/ssl/mosquitto.org.crt).
+
+Generate a certificate signing request by:
+
+```sh
+openssl req -out client.csr -key client.key -new
+```
+
+After this, you can securely reconnect the broker by adding security information before connecting:
+```sh
+>>> client.tls_set(ca_certs="mosquitto.org.crt",
+certfile="client.crt",keyfile="client.key")
+```
 ## Hardware 
 
 ## Android Application
