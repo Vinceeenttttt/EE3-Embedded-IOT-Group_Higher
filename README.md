@@ -50,8 +50,14 @@ certfile="client.crt",keyfile="client.key")
 
 ## Hardware 
 
-Temperature and humidity sensor `SI702` is used for measurement of temperature and humidity. 
-Compass sensor `HMC5883L` is used for detection of the rotation angle of the product placed on the babybed.
+Temperature and humidity sensor `Adafruit SI7021` is used for measurement of temperature and humidity.
+More information can be found at: (https://www.instructables.com/id/An-Adafruit-Si7021-Raspberry-Pi-and-Pimoroni-Displ/)
+
+Compass sensor `Adafruit HMC5883L` is used for detection of the rotation angle of the product placed on the babybed.
+More information can be found at: (https://cdn-shop.adafruit.com/datasheets/HMC5883L_3-Axis_Digital_Compass_IC.pdf)
+
+Calibration of the compass sensor could be applied for initializing the sensor. Main steps are setting up of reading and displaying data from the sensor, collecting 500 readings and writes the values at various positions to a CSV file, working out the minimum and maximum values of x and y and calculates the offsets, and finallly applying scaling, offsets and local magnetic declination angle to the result.
+More information can be found at: (https://www.instructables.com/id/Configure-read-data-calibrate-the-HMC5883L-digital/)
 
 ## Android Application
 
