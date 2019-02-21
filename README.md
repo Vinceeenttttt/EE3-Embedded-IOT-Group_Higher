@@ -47,7 +47,11 @@ After this, you can securely reconnect the broker by adding security information
 >>> client.tls_set(ca_certs="mosquitto.org.crt",
 certfile="client.crt",keyfile="client.key")
 ```
+
 ## Hardware 
+
+Temperature and humidity sensor `SI702` is used for measurement of temperature and humidity. 
+Compass sensor `HMC5883L` is used for detection of the rotation angle of the product placed on the babybed.
 
 ## Android Application
 
