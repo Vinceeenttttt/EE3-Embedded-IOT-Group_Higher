@@ -50,15 +50,19 @@ certfile="client.crt",keyfile="client.key")
 
 ## Hardware 
 
-Temperature and humidity sensor `Adafruit SI7021` is used for measurement of temperature and humidity.
+### Adafruit SI7021 Temperature and Humidity Sensor
+
+Temperature and humidity sensor `Adafruit SI7021` is used for measurement of temperature and humidity. It has built-in ADC module and I2C interface. Hence, its SCL and SDA directly connect with the I2C, which then connect with breakout board on the Raspberry Pi. GPIO pins are not used in this application. Digital logic voltage (3.3V) is used for this sensor.
 
 More information can be found at: (https://www.instructables.com/id/An-Adafruit-Si7021-Raspberry-Pi-and-Pimoroni-Displ/)
 
+### Adafruit HMC5883L Triple-axis Magnetometer 
 
-Compass sensor `Adafruit HMC5883L` is used for detection of the rotation angle of the product placed on the babybed.
+Triple-axis Magnetometer `Adafruit HMC5883L` is used for detection of the rotation angle of the product placed on the babybed. It also has built-in ADC module and I2C interface. Its circuit is identical with the other SI7021 sensor. Its SCL and SDA directly connect with the I2C, which then connect with breakout board on the Raspberry Pi. GPIO pins are not used in this application. Digital logic voltage (3.3V) is used for this sensor.
 
 More information can be found at: (https://cdn-shop.adafruit.com/datasheets/HMC5883L_3-Axis_Digital_Compass_IC.pdf)
 
+### Calibration of sensor
 
 Calibration of the compass sensor could be applied for initializing the sensor. Main steps are setting up of reading and displaying data from the sensor, collecting 500 readings and writes the values at various positions to a CSV file, working out the minimum and maximum values of x and y and calculates the offsets, and finallly applying scaling, offsets and local magnetic declination angle to the result.
 
